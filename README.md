@@ -8,7 +8,7 @@ Prérequis
 
 Ce dont vous avez besoin pour installer le logiciel et comment les installer.
 
-`pip install -r requirements.txt``
+`pip install -r requirements.txt`
 
 # Exemple de commande
 
