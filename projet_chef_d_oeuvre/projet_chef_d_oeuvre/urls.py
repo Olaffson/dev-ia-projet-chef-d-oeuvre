@@ -21,8 +21,8 @@ from application_chef_d_oeuvre import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    # path('', views.index ),
     path('', views.login_page, name='login'),
     path('signup', views.signup_page, name='signup'),
-    # path('logout/', views.logout_user, name='logout'),
+    path('index', views.index, name='index'),
+    path('logout/', views.logout_user, name='logout'),
 ]

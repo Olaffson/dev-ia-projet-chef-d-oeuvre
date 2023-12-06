@@ -1,0 +1,9 @@
+{% extends 'application_chef_d_oeuvre/base.html' %}
+
+{% block content %}
+{% if user.is_authenticated %}
+Bonjour, {{ first_name }} !
+{% else %}
+<p>Veuillez vous <a href="{% url 'login' %}">connecter</a>.</p>
+{% endif %}
+{% endblock %}

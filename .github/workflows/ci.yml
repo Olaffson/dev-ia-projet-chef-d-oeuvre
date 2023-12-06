@@ -27,3 +27,17 @@ jobs:
         file: ./Dockerfile
         push: true
         tags: projetolivier.azurecr.io/projet_chef_d_oeuvre:v1
+
+    # - name: Login to Azure CLI
+    # uses: azure/login@v1
+    # with:
+    #     creds: ${{ secrets.AZURE_CREDENTIALS }}
+  
+    # - name: Redémarrer Azure App Service
+    # run: |
+    #     az webapp restart --name projetappweb --resource-group Kotwica_Olivier
+    
+
+# pour recuperer un json qui contient les AZURE_CREDENTIALS
+# az ad sp create-for-rbac --name "monGithubActionsSP" --role contributor --scopes /subscriptions/111aaa69-41b9-4dfd-b6af-2ada039dd1ae/resourceGroups/Kotwica_Olivier --sdk-auth
+  
