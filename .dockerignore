@@ -9,5 +9,3 @@ Dockerfile
 docker-compose.yml
 README.md
 db.sqlite3
-static/
-media/
