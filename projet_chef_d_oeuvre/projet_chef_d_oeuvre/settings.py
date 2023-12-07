@@ -26,16 +26,18 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure--hp81*8$#1tt*zt-bskfueu3t*&&mum$)g&o6p6^9^qfu9s^-5'
+SECRET_KEY = [os.getenv('SECRET_KEY')]
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = [os.getenv('DEBUG')]
 
 ALLOWED_HOSTS = ['*']
+# ALLOWED_HOSTS = [os.getenv('ALLOWED_HOSTS',default='*')]
 
-CSRF_COOKIE_SECURE = True
-SESSION_COOKIE_SECURE = True
-CSRF_TRUSTED_ORIGINS = ['https://projetappweb.azurewebsites.net/']
+# CSRF_COOKIE_SAMESITE = None  # Ou 'Strict'/'Lax' selon votre besoin
+# CSRF_COOKIE_SECURE = True
+# SESSION_COOKIE_SECURE = True
+CSRF_TRUSTED_ORIGINS = ['https://*.projetappweb.azurewebsites.net/']
 
 # Application definition
 
