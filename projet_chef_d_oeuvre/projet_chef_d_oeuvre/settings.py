@@ -37,7 +37,7 @@ ALLOWED_HOSTS = ['*']
 # CSRF_COOKIE_SAMESITE = None  # Ou 'Strict'/'Lax' selon votre besoin
 # CSRF_COOKIE_SECURE = True
 # SESSION_COOKIE_SECURE = True
-CSRF_TRUSTED_ORIGINS = ['https://*.projetappweb.azurewebsites.net/']
+CSRF_TRUSTED_ORIGINS = ['https://*.projetappweb.azurewebsites.net']
 
 # Application definition
 
