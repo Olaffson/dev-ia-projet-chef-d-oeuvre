@@ -1,0 +1,47 @@
+name: Django CI
+
+on:
+  push:
+    branches: [ develop ]
+#   pull_request:
+#     branches: [ develop ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    services:
+      postgres:
+        image: postgres:12
+        env:
+          POSTGRES_DB: nom_de_la_base_de_donnees
+          POSTGRES_USER: utilisateur
+          POSTGRES_PASSWORD: mot_de_passe
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Set up Python 3.10
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.10
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install pytest pytest-django
+        pip install -r requirements.txt
+
+    - name: Run tests
+      env:
+        DJANGO_SETTINGS_MODULE: projet_chef_d_oeuvre.settings
+        DATABASE_URL: postgres://utilisateur:mot_de_passe@localhost:5432/nom_de_la_base_de_donnees
+      run: |
+        pytest
