@@ -6,5 +6,10 @@
     {{ form.as_p }}
     <button type="submit">Se connecter</button>
 </form>
+
+{% if message %}
+    <p class="error">{{ message }}</p>
+{% endif %}
+
 <p>Pas encore membre ? <a href="{% url 'signup' %}">Inscrivez-vous maintenant !</a></p>
 {% endblock content %}
