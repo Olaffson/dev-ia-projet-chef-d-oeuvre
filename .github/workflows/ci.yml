@@ -42,7 +42,8 @@ jobs:
           DJANGO_SETTINGS_MODULE: projet_chef_d_oeuvre.settings
           DATABASE_URL: postgres://${{ secrets.POSTGRES_USER }}:${{ secrets.POSTGRES_PASSWORD }}@localhost:5432/${{ secrets.POSTGRES_DB }}
         run: |
-          python projet_chef_d_oeuvre/manage.py migrate
+          cd projet_chef_d_oeuvre
+          python manage.py migrate
 
       - name: Run tests with coverage
         env:
