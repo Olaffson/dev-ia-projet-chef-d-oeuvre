@@ -75,3 +75,9 @@ Remerciements
     Chapeau bas à quiconque dont le code a été utilisé
     Inspiration
     etc
+
+
+
+liste des cmd
+
+pour la couverture pytest /projet_chef_d_oeuvre$ pytest --cov=application_chef_d_oeuvre --cov-report=term

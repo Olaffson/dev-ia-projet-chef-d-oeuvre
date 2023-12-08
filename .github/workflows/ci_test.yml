@@ -14,9 +14,9 @@ jobs:
       postgres:
         image: postgres:12
         env:
-          POSTGRES_DB: nom_de_la_base_de_donnees
-          POSTGRES_USER: utilisateur
-          POSTGRES_PASSWORD: mot_de_passe
+          POSTGRES_DB: postgreolivier
+          POSTGRES_USER: Olivier_Kotwica
+          POSTGRES_PASSWORD: 2J3didFdt7aEYqf
         ports:
           - 5432:5432
         options: >-
@@ -31,7 +31,7 @@ jobs:
     - name: Set up Python 3.10
       uses: actions/setup-python@v2
       with:
-        python-version: 3.10
+        python-version: "3.10"
 
     - name: Install dependencies
       run: |
@@ -45,3 +45,10 @@ jobs:
         DATABASE_URL: postgres://utilisateur:mot_de_passe@localhost:5432/nom_de_la_base_de_donnees
       run: |
         pytest
+    
+    # - name: Run tests with coverage
+    #   run: |
+    #     pytest --cov=mon_application --cov-report=term --cov-fail-under=90 -vv
+    #     # Remplacez `mon_application` par le chemin de votre package/application Django
+    #     # `--cov-fail-under=80` définit le seuil minimum de couverture à 80%
+
