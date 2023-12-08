@@ -40,8 +40,6 @@
 #         az webapp restart --name projetappweb --resource-group Kotwica_Olivier
     
 
-# pour recuperer un json qui contient les AZURE_CREDENTIALS
-# az ad sp create-for-rbac --name "Build and Push Docker Image" --role contributor --scopes /subscriptions/111aaa69-41b9-4dfd-b6af-2ada039dd1ae/resourceGroups/Kotwica_Olivier --sdk-auth
 
 name: Build and Push Docker Image
 
@@ -83,3 +81,7 @@ jobs:
       - name: Redémarrer Azure App Service
         run: |
           az webapp restart --name projetappweb --resource-group Kotwica_Olivier
+
+
+# pour recuperer un json qui contient les AZURE_CREDENTIALS
+# az ad sp create-for-rbac --name "Build and Push Docker Image" --role contributor --scopes /subscriptions/111aaa69-41b9-4dfd-b6af-2ada039dd1ae/resourceGroups/Kotwica_Olivier --sdk-auth
